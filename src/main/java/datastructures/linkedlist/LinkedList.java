@@ -76,6 +76,7 @@ public class LinkedList {
             Node pre = head;
             Node temp = head;
             while (temp.next != null){
+                pre = temp;
                 temp = pre.next;
             }
             tail = pre;
