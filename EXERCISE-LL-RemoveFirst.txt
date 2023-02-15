@@ -1,3 +1,43 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.linkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        LinkedList myLinkedList = new LinkedList(2);
+        myLinkedList.append(1);
+       
+        // (2) Items - Returns 2 Node
+        System.out.println(myLinkedList.removeFirst().value);
+        // (1) Item - Returns 1 Node
+        System.out.println(myLinkedList.removeFirst().value);
+        // (0) Items - Returns null
+        System.out.println(myLinkedList.removeFirst());
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            2
+            1
+            null
+
+        */
+
+    }
+
+}
+
+
+
+
+// THIS CODE GOES IN YOUR LINKEDLIST CLASS:
+// ---------------------------------------- 
+   
 package datastructures.linkedlist;
 
 
@@ -93,27 +133,11 @@ public class LinkedList {
         length++;
     }
 
-    public Node removeFirst(){
-        if (length == 0){
-            return null;
-        } else {
-            Node removedNode = head;
-            if (length == 1) {
-                head = null;
-                tail = null;
-            } else {
-                head = removedNode.next;
-                removedNode.next = null;
-            }
-            length--;
-            return removedNode;
-        }
-    }
-    // WRITE REMOVEFIRST METHOD HERE //
-    //                               //
-    //                               //
-    //                               //
-    //                               //
-    ///////////////////////////////////
+	// WRITE REMOVEFIRST METHOD HERE //
+	//                               //
+	//                               //
+	//                               //
+	//                               //
+	///////////////////////////////////
 
 }
