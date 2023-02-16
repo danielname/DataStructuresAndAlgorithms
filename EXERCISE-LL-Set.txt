@@ -1,3 +1,55 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.linkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        LinkedList myLinkedList = new LinkedList(0);
+        myLinkedList.append(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+
+        System.out.println("Linked List before set():");
+        myLinkedList.printList();
+
+        myLinkedList.set(2, 99);
+
+        System.out.println("\nLinked List after set():");
+        myLinkedList.printList();
+
+        
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Linked List before set():
+            0
+            1
+            2
+            3
+            
+            Linked List after set():
+            0
+            1
+            99
+            3
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR LINKEDLIST CLASS:
+// ---------------------------------------- 
+   
 package datastructures.linkedlist;
 
 
@@ -114,17 +166,12 @@ public class LinkedList {
         return temp;
     }
 
-    public void set(int index, int value){
-        Node setNode = get(index);
-        if (setNode != null){
-            setNode.value = value;
-        }
-    }
-    /// WRITE SET METHOD HERE ///
-    //                         //
-    //                         //
-    //                         //
-    //                         //
-    /////////////////////////////
+	/// WRITE SET METHOD HERE ///
+	//                         //
+	//                         //
+	//                         //
+	//                         //
+	/////////////////////////////
 
 }
+
