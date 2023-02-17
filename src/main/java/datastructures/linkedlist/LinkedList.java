@@ -150,6 +150,7 @@ public class LinkedList {
             Node temp = get(index);
             pre.next = temp.next;
             temp.next = null;
+            length--;
             return temp;
         }
     }
