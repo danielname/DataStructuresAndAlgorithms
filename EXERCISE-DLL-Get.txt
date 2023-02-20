@@ -1,7 +1,42 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
 package datastructures.doublylinkedlist;
 
+public class Main {
 
-import datastructures.linkedlist.LinkedList;
+    public static void main(String[] args) {
+
+        DoublyLinkedList myDLL = new DoublyLinkedList(0);
+        myDLL.append(1);
+        myDLL.append(2);
+        myDLL.append(3);
+
+
+        System.out.println(myDLL.get(3).value);
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            3
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR DOUBLYLINKEDLIST CLASS:
+// ----------------------------------------------
+      
+package datastructures.doublylinkedlist;
+
 
 public class DoublyLinkedList {
 
@@ -110,26 +145,12 @@ public class DoublyLinkedList {
         return temp;
     }
 
-    public Node get(int index){
-        if(index >= length || index < 0) return null;
-        if (index < length / 2){
-            Node temp = head;
-            for(int i = 0; i < index; i++) {
-                temp = temp.next;
-            }
-            return temp;
-        }
-        Node temp = tail;
-        for(int i = 1; i < length - index; i++) {
-            temp = temp.prev;
-        }
-        return temp;
-    }
-    /// WRITE GET METHOD HERE ///
-    //                         //
-    //                         //
-    //                         //
-    //                         //
-    /////////////////////////////
+	/// WRITE GET METHOD HERE ///
+	//                         //
+	//                         //
+	//                         //
+	//                         //
+	/////////////////////////////
 
 }
+
