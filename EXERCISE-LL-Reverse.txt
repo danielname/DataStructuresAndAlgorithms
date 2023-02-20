@@ -1,3 +1,55 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.linkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+
+        System.out.println("LL before reverse():");
+        myLinkedList.printList();
+
+        myLinkedList.reverse();
+
+        System.out.println("\nLL after reverse():");
+        myLinkedList.printList();
+        
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            LL before reverse():
+            1
+            2
+            3
+            4
+            
+            LL after reverse():
+            4
+            3
+            2
+            1
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR LINKEDLIST CLASS:
+// ---------------------------------------- 
+   
 package datastructures.linkedlist;
 
 
@@ -155,28 +207,12 @@ public class LinkedList {
         return temp;
     }
 
-    public void reverse(){
-        if (length > 1){
-           Node temp = head;
-           head = tail;
-           tail = temp;
-           Node after = tail.next;
-           Node before = null;
-           for (int i = 0; i < length; i++){
-               temp.next = before;
-               before = temp;
-               temp = after;
-               if(temp.next != null) {
-                   after = temp.next;
-               }
-           }
-        }
-    }
-    // WRITE REVERSE METHOD HERE //
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+	// WRITE REVERSE METHOD HERE //
+	//                           //
+	//                           //
+	//                           //
+	//                           //
+	///////////////////////////////
 
 }
+
