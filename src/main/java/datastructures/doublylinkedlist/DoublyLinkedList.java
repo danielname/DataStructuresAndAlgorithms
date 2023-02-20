@@ -1,0 +1,65 @@
+package datastructures.doublylinkedlist;
+
+
+import org.w3c.dom.Node;
+
+public class DoublyLinkedList {
+
+    private Node head;
+    private Node tail;
+    private int length;
+
+    class Node{
+        int value;
+        Node next;
+        Node prev;
+        Node(int value){
+            this.value = value;
+        }
+    }
+
+    public DoublyLinkedList(int value) {
+        Node newNode = new Node(value);
+        head = newNode;
+        tail = newNode;
+//        newNode.prev = null;
+//        newNode.next = null;
+        length = 1;
+    }
+
+    // CREATE CLASS VARIABLES, NODE CLASS, AND CONSTRUCTOR HERE //
+    //                                                          //
+    //                                                          //
+    //                                                          //
+    //                                                          //
+    //////////////////////////////////////////////////////////////
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+    }
+
+    public void getHead() {
+        if (head == null) {
+            System.out.println("Head: null");
+        } else {
+            System.out.println("Head: " + head.value);
+        }
+    }
+
+    public void getTail() {
+        if (head == null) {
+            System.out.println("Tail: null");
+        } else {
+            System.out.println("Tail: " + tail.value);
+        }
+    }
+
+    public void getLength() {
+        System.out.println("Length: " + length);
+    }
+
+}
