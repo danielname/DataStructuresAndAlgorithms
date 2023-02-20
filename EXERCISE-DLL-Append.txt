@@ -1,3 +1,47 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.doublylinkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList myDLL = new DoublyLinkedList(1);
+        myDLL.append(2);
+
+        myDLL.getHead();
+        myDLL.getTail();
+        myDLL.getLength();
+
+        System.out.println("\nDoubly Linked List:");
+        myDLL.printList();
+        
+        /*
+       		EXPECTED OUTPUT:
+        	----------------
+        	Head: 1
+        	Tail: 2
+        	Length: 2
+        
+        	Doubly Linked List:
+        	1
+        	2
+        
+     	*/
+
+    }
+    
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR DOUBLYLINKEDLIST CLASS:
+// ----------------------------------------------
+      
 package datastructures.doublylinkedlist;
 
 
@@ -52,23 +96,12 @@ public class DoublyLinkedList {
         System.out.println("Length: " + length);
     }
 
-    public void append(int value){
-        Node appendedNode = new Node(value);
-        if (length == 0){
-            head = appendedNode;
-            tail = appendedNode;
-        } else {
-            tail.next = appendedNode;
-            appendedNode.prev = tail;
-            tail = appendedNode;
-        }
-        length++;
-    }
-    // WRITE APPEND METHOD HERE //
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+	// WRITE APPEND METHOD HERE //
+	//                          //
+	//                          //
+	//                          //
+	//                          //
+	//////////////////////////////
 
 }
+
