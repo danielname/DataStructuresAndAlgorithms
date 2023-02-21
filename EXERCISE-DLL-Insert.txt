@@ -1,3 +1,72 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.doublylinkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList myDLL = new DoublyLinkedList(1);
+        myDLL.append(3);
+
+        System.out.println("DLL before insert():");
+        myDLL.printList();
+
+        myDLL.insert(1, 2);
+
+        System.out.println("\nDLL after insert(2) in middle:");
+        myDLL.printList();
+
+        myDLL.insert(0, 0);
+
+        System.out.println("\nDLL after insert(0) at beginning:");
+        myDLL.printList();
+
+        myDLL.insert(4, 4);
+
+        System.out.println("\nDLL after insert(4) at end:");
+        myDLL.printList();
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            DLL before insert():
+            1
+            3
+
+            DLL after insert(2) in middle:
+            1
+            2
+            3
+
+            DLL after insert(0) at beginning:
+            0
+            1
+            2
+            3
+
+            DLL after insert(4) at end:
+            0
+            1
+            2
+            3
+            4
+
+        */
+
+    }
+
+}
+
+
+
+
+// THIS CODE GOES IN YOUR DOUBLYLINKEDLIST CLASS:
+// ----------------------------------------------
+      
 package datastructures.doublylinkedlist;
 
 
@@ -133,31 +202,12 @@ public class DoublyLinkedList {
         return false;
     }
 
-    public boolean insert(int index, int value)  {
-        if (index < 0 || index > length) return false;
-        if (index == 0) {
-            prepend(value);
-            return true;
-        }
-        if (index == length) {
-            append(value);
-            return true;
-        }
-        Node temp = get(index);
-        Node prev = get(index - 1);
-        Node insertedNode = new Node(value);
-        prev.next = insertedNode;
-        temp.prev = insertedNode;
-        insertedNode.prev = prev;
-        insertedNode.next = temp;
-        length++;
-        return true;
-    }
-    // WRITE INSERT METHOD HERE //
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+	// WRITE INSERT METHOD HERE //
+	//                          //
+	//                          //
+	//                          //
+	//                          //
+	//////////////////////////////
 
 }
+
