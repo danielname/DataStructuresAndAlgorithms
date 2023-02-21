@@ -1,3 +1,82 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.doublylinkedlist;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList myDLL = new DoublyLinkedList(1);
+        myDLL.append(2);
+        myDLL.append(3);
+        myDLL.append(4);
+        myDLL.append(5);
+
+        System.out.println("DLL before remove():");
+        myDLL.printList();
+
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(2).value);
+        System.out.println("DLL after remove() in middle:");
+        myDLL.printList();
+
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(0).value);
+        System.out.println("DLL after remove() of first node:");
+        myDLL.printList();
+
+        System.out.println("\nRemoved node:");
+        System.out.println(myDLL.remove(2).value);
+        System.out.println("DLL after remove() of last node:");
+        myDLL.printList();
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            DLL before remove():
+            1
+            2
+            3
+            4
+            5
+
+            Removed node:
+            3
+            DLL after remove() in middle:
+            1
+            2
+            4
+            5
+
+            Removed node:
+            1
+            DLL after remove() of first node:
+            2
+            4
+            5
+
+            Removed node:
+            5
+            DLL after remove() of last node:
+            2
+            4
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR DOUBLYLINKEDLIST CLASS:
+// ----------------------------------------------
+      
 package datastructures.doublylinkedlist;
 
 
@@ -133,31 +212,33 @@ public class DoublyLinkedList {
         return false;
     }
 
-    public boolean insert(int index, int value)  {
-        if (index < 0 || index > length) return false;
-        if (index == 0) {
+    public boolean insert(int index, int value) {
+        if(index < 0 || index > length) return false;
+        if(index == 0) {
             prepend(value);
             return true;
         }
-        if (index == length) {
+        if(index == length) {
             append(value);
             return true;
         }
-        Node temp = get(index);
-        Node prev = temp.prev;
-        Node insertedNode = new Node(value);
-        prev.next = insertedNode;
-        temp.prev = insertedNode;
-        insertedNode.prev = prev;
-        insertedNode.next = temp;
+        Node newNode = new Node(value);
+        Node before = get(index - 1);
+        Node after = before.next;
+        newNode.prev = before;
+        newNode.next = after;
+        before.next = newNode;
+        after.prev = newNode;
         length++;
         return true;
     }
-    // WRITE INSERT METHOD HERE //
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+
+	// WRITE REMOVE METHOD HERE //
+	//                          //
+	//                          //
+	//                          //
+	//                          //
+	//////////////////////////////
 
 }
+
