@@ -1,3 +1,44 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.stack;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Stack myStack = new Stack(2);
+        myStack.push(1);
+
+        // (2) Items - Returns 1 Node
+        System.out.println(myStack.pop().value);
+        // (1) Item - Returns 2 Node
+        System.out.println(myStack.pop().value);
+        // (0) Items - Returns null
+        System.out.println(myStack.pop());
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            1
+            2
+            null
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR STACK CLASS:
+// -----------------------------------
+      
 package datastructures.stack;
 
 public class Stack {
@@ -13,7 +54,7 @@ public class Stack {
             this.value = value;
         }
     }
-
+    
     public Stack(int value) {
         Node newNode = new Node(value);
         top = newNode;
@@ -51,19 +92,12 @@ public class Stack {
         height++;
     }
 
-    public Node pop(){
-        if(height == 0) return null;
-        Node temp = top;
-        top = temp.next;
-        temp.next = null;
-        height--;
-        return temp;
-    }
-    /// WRITE POP METHOD HERE ///
-    //                         //
-    //                         //
-    //                         //
-    //                         //
-    /////////////////////////////
+	/// WRITE POP METHOD HERE ///
+	//                         //
+	//                         //
+	//                         //
+	//                         //
+	/////////////////////////////
 
 }
+
