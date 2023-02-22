@@ -2,30 +2,23 @@ package datastructures.stack;
 
 public class Stack {
 
+    private Node top;
+    private int height;
+
     class Node {
         int value;
         Node next;
-        Node(int value){
+
+        Node(int value) {
             this.value = value;
         }
     }
 
-    private Node top;
-    private int height;
-
-    Stack(int value){
+    public Stack(int value) {
         Node newNode = new Node(value);
         top = newNode;
         height = 1;
     }
-
-
-    // CREATE CLASS VARIABLES, NODE CLASS, AND CONSTRUCTOR HERE//
-    //                                                         //
-    //                                                         //
-    //                                                         //
-    //                                                         //
-    /////////////////////////////////////////////////////////////
 
     public void printStack() {
         Node temp = top;
@@ -46,5 +39,18 @@ public class Stack {
     public void getHeight() {
         System.out.println("Height: " + height);
     }
+
+    public void push(int value){
+        Node pushedNode = new Node(value);
+        pushedNode.next = top;
+        top = pushedNode;
+        height++;
+    }
+    /// WRITE PUSH METHOD HERE ///
+    //                          //
+    //                          //
+    //                          //
+    //                          //
+    //////////////////////////////
 
 }
