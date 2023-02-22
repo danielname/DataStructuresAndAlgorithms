@@ -4,29 +4,23 @@ public class Queue {
 
     private Node first;
     private Node last;
-    int length;
+    private int length;
 
-    class Node{
+    class Node {
         int value;
         Node next;
-        Node(int value){
+
+        Node(int value) {
             this.value = value;
         }
     }
 
-    Queue(int value){
+    public Queue(int value) {
         Node newNode = new Node(value);
         first = newNode;
         last = newNode;
         length = 1;
     }
-
-    // CREATE CLASS VARIABLES, NODE CLASS, AND CONSTRUCTOR HERE//
-    //                                                         //
-    //                                                         //
-    //                                                         //
-    //                                                         //
-    /////////////////////////////////////////////////////////////
 
     public void printQueue() {
         Node temp = first;
@@ -55,5 +49,24 @@ public class Queue {
     public void getLength() {
         System.out.println("Length: " + length);
     }
+
+    public void enqueue(int value){
+        Node newNode = new Node(value);
+        if (length == 0) {
+            first = newNode;
+            last = newNode;
+        } else {
+            last.next = newNode;
+            last = newNode;
+        }
+        length++;
+    }
+
+    // WRITE ENQUEUE METHOD HERE //
+    //                           //
+    //                           //
+    //                           //
+    //                           //
+    ///////////////////////////////
 
 }
