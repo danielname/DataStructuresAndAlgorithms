@@ -3,27 +3,47 @@ package datastructures.binarysearchtree;
 
 public class BinarySearchTree {
 
-    class Node{
-        int value;
-        Node left;
-        Node right;
+    // ROOT MUST BE PUBLIC FOR CODE IN MAIN METHOD TO WORK
+    public Node root;
 
-        Node(int value){
+    class Node {
+        public int value;
+        public Node left;
+        public Node right;
+
+        Node(int value) {
             this.value = value;
         }
     }
 
-    Node root;
-
-    BinarySearchTree(){
-        root = null;
+    public void insert(int value){
+        Node newNode = new Node(value);
+        if (root == null){
+            root = newNode;
+        }
+        Node tracker = root;
+        while (true){
+            if (tracker.value == newNode.value) break;
+            if (tracker.value > newNode.value){
+                if (tracker.left == null){
+                    tracker.left = newNode;
+                    break;
+                }
+                tracker = tracker.left;
+            } else {
+                if (tracker.right == null){
+                    tracker.right = newNode;
+                    break;
+                }
+                tracker = tracker.right;
+            }
+        }
     }
-
-    // CREATE CLASS VARIABLE (ROOT) AND NODE CLASS HERE//
-    //                                                 //
-    //                                                 //
-    //                                                 //
-    //                                                 //
-    /////////////////////////////////////////////////////
+    // WRITE INSERT METHOD HERE //
+    //                          //
+    //                          //
+    //                          //
+    //                          //
+    //////////////////////////////
 
 }
