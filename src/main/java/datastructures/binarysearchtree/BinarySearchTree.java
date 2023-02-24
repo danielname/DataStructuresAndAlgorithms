@@ -3,8 +3,7 @@ package datastructures.binarysearchtree;
 
 public class BinarySearchTree {
 
-    // ROOT MUST BE PUBLIC FOR CODE IN MAIN METHOD TO WORK
-    public Node root;
+    private Node root;
 
     class Node {
         public int value;
@@ -16,34 +15,54 @@ public class BinarySearchTree {
         }
     }
 
-    public void insert(int value){
+    public boolean insert(int value) {
         Node newNode = new Node(value);
-        if (root == null){
+        if (root == null) {
             root = newNode;
+            return true;
         }
-        Node tracker = root;
-        while (true){
-            if (tracker.value == newNode.value) break;
-            if (tracker.value > newNode.value){
-                if (tracker.left == null){
-                    tracker.left = newNode;
-                    break;
+        Node temp = root;
+        while (true) {
+            if (newNode.value == temp.value) return false;
+            if (newNode.value < temp.value) {
+                if (temp.left == null) {
+                    temp.left = newNode;
+                    return true;
                 }
-                tracker = tracker.left;
+                temp = temp.left;
             } else {
-                if (tracker.right == null){
-                    tracker.right = newNode;
-                    break;
+                if (temp.right == null) {
+                    temp.right = newNode;
+                    return true;
                 }
-                tracker = tracker.right;
+                temp = temp.right;
             }
         }
     }
-    // WRITE INSERT METHOD HERE //
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+
+    public boolean contains(int value){
+        if (root == null) return false;
+        Node temp = root;
+        while (true) {
+            if (value == temp.value) return true;
+            if (value < temp.value) {
+                if (temp.left == null) {
+                    return false;
+                }
+                temp = temp.left;
+            } else {
+                if (temp.right == null) {
+                    return false;
+                }
+                temp = temp.right;
+            }
+        }
+    }
+    // WRITE CONTAINS METHOD HERE //
+    //                            //
+    //                            //
+    //                            //
+    //                            //
+    ////////////////////////////////
 
 }
