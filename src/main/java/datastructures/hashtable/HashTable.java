@@ -1,7 +1,8 @@
 package datastructures.hashtable;
 
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Objects;
 
 public class HashTable {
     private int size = 7;
@@ -65,22 +66,35 @@ public class HashTable {
         }
     }
 
-    public int get(String key){
+    public int get(String key) {
         int index = hash(key);
         Node temp = dataMap[index];
-        while (temp != null){
-            if (Objects.equals(temp.key, key)){
-                return temp.value;
-            }
+        while (temp != null) {
+            if (temp.key == key) return temp.value;
             temp = temp.next;
         }
         return 0;
     }
-    ///  WRITE GET METHOD HERE  ///
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+
+    public ArrayList<String> keys(){
+        ArrayList<String> keyList = new ArrayList<>();
+        Node temp = dataMap[0];
+        for (int i = 0; i < dataMap.length; i++){
+            if (dataMap[i] != null){
+                temp = dataMap[i];
+                while (temp != null){
+                    keyList.add(temp.key);
+                    temp = temp.next;
+                }
+            }
+        }
+        return keyList;
+    }
+    ///  WRITE KEYS METHOD HERE  ///
+    //                            //
+    //                            //
+    //                            //
+    //                            //
+    ////////////////////////////////
 
 }
