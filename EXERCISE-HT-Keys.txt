@@ -1,7 +1,45 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
 package datastructures.hashtable;
 
+public class Main {
 
-import java.util.Objects;
+    public static void main(String[] args) {
+
+        HashTable myHashTable = new HashTable();
+
+        myHashTable.set("paint", 20);
+        myHashTable.set("bolts", 40);
+        myHashTable.set("nails", 100);
+        myHashTable.set("tile", 50);
+        myHashTable.set("lumber", 80);
+
+        System.out.println( myHashTable.keys() );
+        
+    	/*
+        	EXPECTED OUTPUT:
+        	----------------
+        	[paint, bolts, nails, tile, lumber]
+    
+    	*/        
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR HASHTABLE CLASS:
+// ---------------------------------------
+      
+package datastructures.hashtable;
+
+import java.util.ArrayList;
+
 
 public class HashTable {
     private int size = 7;
@@ -65,22 +103,22 @@ public class HashTable {
         }
     }
 
-    public int get(String key){
+    public int get(String key) {
         int index = hash(key);
         Node temp = dataMap[index];
-        while (temp != null){
-            if (Objects.equals(temp.key, key)){
-                return temp.value;
-            }
+        while (temp != null) {
+            if (temp.key == key) return temp.value;
             temp = temp.next;
         }
         return 0;
     }
-    ///  WRITE GET METHOD HERE  ///
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+
+	///  WRITE KEYS METHOD HERE  ///
+	//                            //
+	//                            //
+	//                            //
+	//                            //
+	////////////////////////////////
 
 }
+
