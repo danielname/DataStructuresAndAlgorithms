@@ -31,23 +31,30 @@ public class HashTable {
         }
     }
 
-    // HASH METHOD MUST BE PUBLIC FOR CODE IN MAIN TO WORK
-
-    public int hash(String key){
+    private int hash(String key) {
         int hash = 0;
         char[] keyChars = key.toCharArray();
-        for (int i = 0; i < keyChars.length; i++){
+        for (int i = 0; i < keyChars.length; i++) {
             int asciiValue = keyChars[i];
             hash = (hash + asciiValue * 23) % dataMap.length;
         }
         return hash;
     }
 
-    /// WRITE HASH METHOD HERE ///
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+    public void set(String key, int value){
+        int hashvalue = hash(key);
+        if (dataMap[hashvalue] == null){
+            dataMap[hashvalue] = new Node(key, value);
+        } else {
+//            Node temp = dataMap[hashvalue];
+        }
+    }
+
+    ///  WRITE SET METHOD HERE  ///
+    //                           //
+    //                           //
+    //                           //
+    //                           //
+    ///////////////////////////////
 
 }
