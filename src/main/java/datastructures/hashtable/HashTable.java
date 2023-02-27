@@ -43,10 +43,15 @@ public class HashTable {
 
     public void set(String key, int value){
         int hashvalue = hash(key);
+        Node newNode = new Node(key, value);
         if (dataMap[hashvalue] == null){
-            dataMap[hashvalue] = new Node(key, value);
+            dataMap[hashvalue] = newNode;
         } else {
-//            Node temp = dataMap[hashvalue];
+            Node temp = dataMap[hashvalue];
+            while (temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = newNode;
         }
     }
 
