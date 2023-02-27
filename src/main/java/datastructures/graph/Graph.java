@@ -12,15 +12,24 @@ public class Graph {
         System.out.println(adjList);
     }
 
-    public void addVertex(String key){
-        ArrayList<String> value = new ArrayList<>();
-        adjList.put(key,value);
+    public boolean addVertex(String vertex) {
+        if (adjList.get(vertex) == null) {
+            adjList.put(vertex, new ArrayList<String>());
+            return true;
+        }
+        return false;
     }
-    // WRITE ADDVERTEX METHOD HERE //
-    //                             //
-    //                             //
-    //                             //
-    //                             //
-    /////////////////////////////////
+
+    public void addEdge(String key1, String key2){
+        adjList.get(key1).add(key2);
+        adjList.get(key2).add(key1);
+
+    }
+    // WRITE ADDEDGE METHOD HERE //
+    //                           //
+    //                           //
+    //                           //
+    //                           //
+    ///////////////////////////////
 
 }
