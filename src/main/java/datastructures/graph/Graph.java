@@ -21,9 +21,10 @@ public class Graph {
     }
 
     public void addEdge(String key1, String key2){
-        adjList.get(key1).add(key2);
-        adjList.get(key2).add(key1);
-
+        if (adjList.get(key1) != null && adjList.get(key2) != null) {
+            adjList.get(key1).add(key2);
+            adjList.get(key2).add(key1);
+        }
     }
     // WRITE ADDEDGE METHOD HERE //
     //                           //
