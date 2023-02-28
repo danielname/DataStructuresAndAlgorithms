@@ -20,17 +20,26 @@ public class Graph {
         return false;
     }
 
-    public void addEdge(String key1, String key2){
-        if (adjList.get(key1) != null && adjList.get(key2) != null) {
-            adjList.get(key1).add(key2);
-            adjList.get(key2).add(key1);
+    public boolean addEdge(String vertex1, String vertex2) {
+        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
+            adjList.get(vertex1).add(vertex2);
+            adjList.get(vertex2).add(vertex1);
+            return true;
+        }
+        return false;
+    }
+
+    public void removeEdge(String key1, String key2){
+        if (adjList.get(key1).contains(key2) && adjList.get(key2).contains(key1)) {
+            adjList.get(key1).remove(key2);
+            adjList.get(key2).remove(key1);
         }
     }
-    // WRITE ADDEDGE METHOD HERE //
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+    // WRITE REMOVEEDGE METHOD HERE //
+    //                              //
+    //                              //
+    //                              //
+    //                              //
+    //////////////////////////////////
 
 }
