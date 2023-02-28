@@ -29,17 +29,30 @@ public class Graph {
         return false;
     }
 
-    public void removeEdge(String key1, String key2){
-        if (adjList.get(key1).contains(key2) && adjList.get(key2).contains(key1)) {
-            adjList.get(key1).remove(key2);
-            adjList.get(key2).remove(key1);
+    public boolean removeEdge(String vertex1, String vertex2) {
+        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
+            adjList.get(vertex1).remove(vertex2);
+            adjList.get(vertex2).remove(vertex1);
+            return true;
+        }
+        return false;
+    }
+
+    public void removeVertex (String key){
+        if (adjList.get(key) != null){
+            String temp;
+            for (int i = 0; i < adjList.get(key).size(); i++){
+                temp = adjList.get(key).get(i);
+                adjList.get(temp).remove(key);
+            }
+            adjList.remove(key);
         }
     }
-    // WRITE REMOVEEDGE METHOD HERE //
-    //                              //
-    //                              //
-    //                              //
-    //                              //
-    //////////////////////////////////
+    // WRITE REMOVEVERTEX METHOD HERE //
+    //                                //
+    //                                //
+    //                                //
+    //                                //
+    ////////////////////////////////////
 
 }
