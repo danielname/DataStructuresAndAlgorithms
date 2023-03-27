@@ -28,8 +28,12 @@ public class QuickSort {
         return swap;
     }
 
-    private static void quickSortHelper(int[] array, int startingIndex, int endingIndex){
-
+    private static int[] quickSortHelper(int[] array, int startingIndex, int endingIndex){
+        if (startingIndex != endingIndex) {
+            int[] left = quickSortHelper(array, startingIndex, pivot(array, startingIndex, endingIndex));
+            int[] right = quickSortHelper(array, pivot(array, startingIndex, endingIndex) + 1, endingIndex);
+        }
+        return array;
     }
     // WRITE QUICKSORT HELPER METHOD HERE //
     //                                    //
