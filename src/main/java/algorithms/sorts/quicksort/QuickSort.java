@@ -10,11 +10,10 @@ public class QuickSort {
         array[secondIndex] = temp;
     }
 
-    private static int pivot(int[] array, int sartingIndex, int endingIndex){
-        int pivot = 0;
-        int swap = 0;
-        for (int i = 1; i < array.length; i++){
-            if (array[i] < array[pivot]){
+    private static int pivot(int[] array, int startingIndex, int endingIndex){
+        int swap = startingIndex;
+        for (int i = startingIndex + 1; i < array.length; i++){
+            if (array[i] < array[startingIndex]){
                 swap++;
                 if (swap != i){
                     int temp = array[swap];
@@ -24,16 +23,25 @@ public class QuickSort {
             }
         }
         int temp = array[swap];
-        array[swap] = array[pivot];
-        array[pivot] = temp;
+        array[swap] = array[startingIndex];
+        array[startingIndex] = temp;
         return swap;
     }
-    // WRITE PIVOT METHOD HERE //
-    //                         //
-    //                         //
-    //                         //
-    //                         //
-    /////////////////////////////
+
+    private static void quickSortHelper(int[] array, int startingIndex, int endingIndex){
+
+    }
+    // WRITE QUICKSORT HELPER METHOD HERE //
+    //                                    //
+    //                                    //
+    //                                    //
+    //                                    //
+    ////////////////////////////////////////
+
+
+    public static void quickSort(int[] array) {
+        quickSortHelper(array, 0, array.length-1);
+    }
 
 
 
@@ -41,17 +49,14 @@ public class QuickSort {
 
         int[] myArray = {4,6,1,7,3,2,5};
 
-        int returnedIndex = pivot(myArray, 0, 6);
-
-        System.out.println( "\nReturned Index: " + returnedIndex);
+        quickSort(myArray);
 
         System.out.println( Arrays.toString( myArray ) );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            Returned Index: 3
-            [2, 1, 3, 4, 6, 7, 5]
+            [1, 2, 3, 4, 5, 6, 7]
 
          */
 
