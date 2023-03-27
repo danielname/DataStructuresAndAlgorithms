@@ -33,20 +33,12 @@ public class MergeSort {
         return combined;
     }
 
-    private static int[] mergeSort(int[] array){
-        if (array.length == 1) return array;
-        int midIndex = array.length / 2;
-        int[] left = mergeSort(Arrays.copyOfRange(array,0,midIndex));
-        int[] right = mergeSort(Arrays.copyOfRange(array,midIndex,array.length));
-        return merge(left,right);
-    }
-
-    // WRITE MERGESORT METHOD HERE //
-    //                             //
-    //                             //
-    //                             //
-    //                             //
-    /////////////////////////////////
+	// WRITE MERGESORT METHOD HERE //
+	//                             //
+	//                             //
+	//                             //
+	//                             //
+	/////////////////////////////////
 
 
     public static void main(String[] args) {
@@ -63,7 +55,7 @@ public class MergeSort {
             EXPECTED OUTPUT:
             ----------------
             Original Array: [3, 1, 4, 2]
-
+            
             Sorted Array: [1, 2, 3, 4]
 
          */
