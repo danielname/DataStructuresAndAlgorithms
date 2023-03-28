@@ -14,22 +14,14 @@ public class Main {
         myBST.insert(52);
         myBST.insert(82);
 
-
-        System.out.println("BST Contains 27:");
-        System.out.println(myBST.contains(27));
-
-        System.out.println("\nBST Contains 17:");
-        System.out.println(myBST.contains(17));
-
+        System.out.println("\nBreadth First Search:");
+        System.out.println( myBST.BFS() );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            BST Contains 27:
-            true
-
-            BST Contains 17:
-            false
+            Breadth First Search:
+            [47, 21, 76, 18, 27, 52, 82]
 
         */
 

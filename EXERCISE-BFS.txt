@@ -1,8 +1,49 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.binarysearchtree;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        BinarySearchTree myBST = new BinarySearchTree();
+
+        myBST.insert(47);
+        myBST.insert(21);
+        myBST.insert(76);
+        myBST.insert(18);
+        myBST.insert(27);
+        myBST.insert(52);
+        myBST.insert(82);
+
+        System.out.println("\nBreadth First Search:");
+        System.out.println( myBST.BFS() );
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Breadth First Search:
+            [47, 21, 76, 18, 27, 52, 82]
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR BST CLASS:
+// ---------------------------------
+      
 package datastructures.binarysearchtree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 
@@ -60,28 +101,12 @@ public class BinarySearchTree {
         return false;
     }
 
-    public List<Integer> BFS(){
-        List<Node> queue = new ArrayList<>();
-        List<Integer> results = new ArrayList<>();
-        queue.add(this.root);
-        for(int i = 0; i < queue.size(); i++){
-            if(queue.get(i).left != null){
-                queue.add(queue.get(i).left);
-            }
-            if(queue.get(i).right != null){
-                queue.add(queue.get(i).right);
-            }
-        }
-        for (Node node : queue) {
-            results.add(node.value);
-        }
-        return results;
-    }
-    //// WRITE BFS METHOD HERE ////
-    //                           //
-    //                           //
-    //                           //
-    //                           //
-    ///////////////////////////////
+	//// WRITE BFS METHOD HERE ////
+	//                           //
+	//                           //
+	//                           //
+	//                           //
+	///////////////////////////////
 
 }
+
