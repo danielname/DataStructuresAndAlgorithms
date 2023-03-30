@@ -1,3 +1,45 @@
+
+// THIS GOES IN YOUR MAIN CLASS TO TEST YOUR CODE:
+// -----------------------------------------------
+
+package datastructures.binarysearchtree;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        BinarySearchTree myBST = new BinarySearchTree();
+
+        myBST.insert(47);
+        myBST.insert(21);
+        myBST.insert(76);
+        myBST.insert(18);
+        myBST.insert(27);
+        myBST.insert(52);
+        myBST.insert(82);
+
+        System.out.println("\nDFS PostOrder:");
+        System.out.println( myBST.DFSPostOrder() );
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            DFS PostOrder:
+            [18, 27, 21, 52, 82, 76, 47]
+
+        */
+
+    }
+
+}
+
+
+
+
+
+// THIS CODE GOES IN YOUR BST CLASS:
+// ---------------------------------
+      
 package datastructures.binarysearchtree;
 
 import java.util.ArrayList;
@@ -97,29 +139,15 @@ public class BinarySearchTree {
         return results;
     }
 
-    public ArrayList<Integer> DFSPostOrder(){
-        ArrayList<Integer> results = new ArrayList<>();
-
-        class Traverse {
-            Traverse(Node currentNode) {
-                if (currentNode.left != null) {
-                    new Traverse(currentNode.left);
-                }
-                if (currentNode.right != null) {
-                    new Traverse(currentNode.right);
-                }
-                results.add(currentNode.value);
-            }
-        }
-
-        new Traverse(root);
-        return results;
-    }
-    // WRITE DFS_POSTORDER METHOD HERE //
-    //                                 //
-    //                                 //
-    //                                 //
-    //                                 //
-    /////////////////////////////////////
+	// WRITE DFS_POSTORDER METHOD HERE //
+	//                                 //
+	//                                 //
+	//                                 //
+	//                                 //
+	/////////////////////////////////////
 
 }
+
+
+
+
