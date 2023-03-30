@@ -80,26 +80,21 @@ public class BinarySearchTree {
     }
 
     public ArrayList<Integer> DFSPreOrder() {
-        Node currentNode = root;
-        Stack<Node> stack = new Stack<>();
         ArrayList<Integer> results = new ArrayList<>();
-        stack.push(currentNode);
-        results.add(currentNode.value);
 
-        while (stack.size() > 0) {
-            if (stack.peek().left != null) {
-                stack.push(stack.peek().left);
-                results.add(stack.peek().value);
-            } else {
-                while (stack.size() > 0 && stack.peek().right == null){
-                    stack.pop();
+        class Traverse {
+            Traverse(Node currentNode){
+                results.add(currentNode.value);
+                if (currentNode.left != null){
+                    new Traverse(currentNode.left);
                 }
-                if (stack.size() > 0 && stack.peek().right != null) {
-                    stack.push(stack.peek().right);
-                    results.add(stack.peek().value);
+                if (currentNode.right != null){
+                    new Traverse(currentNode.right);
                 }
             }
         }
+
+        new Traverse(root);
         return results;
     }
     // WRITE DFS_PREORDER METHOD HERE //
